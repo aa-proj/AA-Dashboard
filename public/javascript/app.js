@@ -19,12 +19,15 @@ const db = firebaseApp.firestore();
 
 const handleCustomLogin = () => {
     const token = document.getElementById("token").value;
-    firebase.auth().signInWithCustomToken(token).catch((error) => {
+    console.log(token)
+    firebase.auth().signInWithCustomToken(token).catch(function (error) {
         // Handle Errors here.
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log(errorCode, errorMessage);
-    });
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        console.log(error)
+        // ...
+    }  );
+
 }
 
 /**
